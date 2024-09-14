@@ -12,7 +12,7 @@ export default function ProjectsSidebar({onStartAddProject,projects}){
                 </Button>
                 
             </div>
-            <ul>
+            <ul className="mt-8">
                 {projects.map(project => (
                     <li key={project.id}>
                         <button className=
