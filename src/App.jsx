@@ -11,6 +11,7 @@ function App() {
     tasks: []
   });  
 
+  //taskAddFunc
   function handleAddTask(text){
     setProjectState((prevState) => {
       const taskId = Math.random();
@@ -26,7 +27,16 @@ function App() {
     });
   }
 
-  function handleDeleteTask(){}
+  function handleDeleteTask(id){
+    setProjectState((prevState) => {
+      return{
+        ...prevState,
+        tasks: prevState.tasks.filter(
+          (task) => task.id !== id
+        )
+      };
+    });
+  }
 
   function handleSelectProject(id){
     setProjectState((prevState) => {
@@ -37,7 +47,7 @@ function App() {
     });
   }
 
-  //CreateFunc  
+  //projectAddFunc  
   function handleStartAddProject(){
     setProjectState((prevState) => {
       return{
@@ -72,7 +82,7 @@ function App() {
     })
   } 
 
-  //DeleteFunc
+  //projectDeleteFunc
   function handleDeleteProject(){
     setProjectState((prevState) => {
       return{
